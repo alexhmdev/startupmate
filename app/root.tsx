@@ -8,6 +8,7 @@ import {
   ScrollRestoration,
 } from '@remix-run/react';
 import styles from './styles/app.css';
+import { Navbar } from './components/Navbar';
 
 export const meta: MetaFunction = () => ({
   charset: 'utf-8',
@@ -27,7 +28,10 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Outlet />
+        <Navbar />
+        <main className="flex justify-center h-[calc(100vh-4rem)]">
+          <Outlet />
+        </main>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
