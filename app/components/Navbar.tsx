@@ -35,8 +35,8 @@ export function Navbar() {
             </li>
           </ul>
         </div>
-        <Link to="/" className="btn btn-ghost normal-case text-xl">
-          Startup
+        <Link to="/" className="btn btn-ghost normal-case text-2xl font-bold">
+          StartupMate
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
