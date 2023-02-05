@@ -4,7 +4,7 @@ module.exports = {
   daisyui: {
     themes: [
       {
-        mytheme: {
+        startupmate: {
           primary: '#1A1F63',
           secondary: '#48459A',
           accent: '#46C2C2',

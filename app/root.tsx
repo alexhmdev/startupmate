@@ -29,7 +29,7 @@ export default function App() {
       </head>
       <body>
         <Navbar />
-        <main className="flex justify-center h-[calc(100vh-4rem)]">
+        <main className="flex justify-center h-[calc(100vh-4rem)] before:w-[300px] before:h-[300px] before:absolute before:top-32 before:-left-32 md:before:left-32 before:bg-accent before:blur-3xl before:opacity-40">
           <Outlet />
         </main>
         <ScrollRestoration />
