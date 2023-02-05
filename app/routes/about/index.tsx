@@ -7,14 +7,14 @@ export default function About() {
         </h1>
         <br />
         <p>
-          This awesome IA can help yo to give you some startup ideas with less
+          This awesome AI can help you generate some startup ideas with minimal
           eforth.
           <br />
-          With just giving a some words to StartupMate, you have a fast idea for
-          your startup!
+          Simply provide a few words to StartupMate, and you'll quickly have a
+          great idea for your startup.
           <br />
           Just feel free to explore and be creative about what you can create
-          with this awesome IA! 💡
+          with this awesome AI! 💡
         </p>
       </div>
       <div className="text-xl text-justify">
@@ -25,7 +25,7 @@ export default function About() {
         <ul className="list-disc list-inside">
           <li>Generate a startup idea</li>
           <li>Generate a business model canvas and export it</li>
-          <li>See your IA responses</li>
+          <li>See your AI responses</li>
         </ul>
       </div>
     </section>
