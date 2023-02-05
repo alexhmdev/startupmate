@@ -9,21 +9,11 @@ module.exports = {
           secondary: '#48459A',
           accent: '#46C2C2',
           neutral: '#3d4451',
-          'base-100': '#ffffff',
+          'base-100': '#2222',
         },
       },
+      'cupcake',
     ],
   },
-  // theme: {
-  //   extend: {
-  //     colors: {
-  //       primary: '#1A1F63',
-  //       'primary-variant': '#48459A',
-  //       accent: '#46C2C2',
-  //       secondary: '#F0DC5B',
-  //       'secondary-variant': '#B57F21',
-  //     },
-  //   },
-  // },
   plugins: [require('daisyui')],
 };
