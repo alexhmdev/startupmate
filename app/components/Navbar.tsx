@@ -1,8 +1,8 @@
 import { Link, NavLink } from '@remix-run/react';
 
-export function Navbar() {
+export default function Navbar() {
   return (
-    <div className="navbar bg-primary text-base-100 sticky z-[100]">
+    <div className="navbar bg-primary  sticky z-[100]">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -26,13 +26,10 @@ export function Navbar() {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-accent text-neutral rounded-box w-52"
           >
             <li>
-              <Link to="home">Home</Link>
+              <Link to="about">About</Link>
             </li>
             <li tabIndex={0}>
               <Link to="dashboard">Dashboard</Link>
-            </li>
-            <li>
-              <Link to="generate">Generate</Link>
             </li>
           </ul>
         </div>
@@ -41,22 +38,12 @@ export function Navbar() {
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 bg-primary-variant">
+        <ul className="menu menu-horizontal px-1 ">
           <li>
-            <NavLink
-              to="about"
-              className={({ isActive }) => (isActive ? 'active' : undefined)}
-            >
-              About
-            </NavLink>
+            <NavLink to="about">About</NavLink>
           </li>
           <li tabIndex={0}>
-            <NavLink
-              to="dashboard"
-              className={({ isActive }) => (isActive ? 'active' : undefined)}
-            >
-              Dashboard
-            </NavLink>
+            <NavLink to="dashboard">Dashboard</NavLink>
           </li>
         </ul>
       </div>

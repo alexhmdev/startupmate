@@ -7,9 +7,9 @@ import {
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react';
-import styles from './styles/app.css';
-import { Navbar } from './components/Navbar';
-
+import styles from './tailwind.css';
+import Navbar from './components/Navbar';
+import { links as loaderLinks } from './components/loader';
 export const meta: MetaFunction = () => ({
   charset: 'utf-8',
   title: 'StartupMate',
@@ -17,7 +17,7 @@ export const meta: MetaFunction = () => ({
 });
 
 export function links() {
-  return [{ rel: 'stylesheet', href: styles }];
+  return [...loaderLinks(), { rel: 'stylesheet', href: styles }];
 }
 
 export default function App() {
@@ -29,7 +29,7 @@ export default function App() {
       </head>
       <body>
         <Navbar />
-        <main className="flex justify-center h-[calc(100vh-4rem)] before:w-[300px] before:h-[300px] before:absolute before:top-32 before:-left-32 md:before:left-32 before:bg-accent before:blur-3xl before:opacity-40">
+        <main className="flex justify-center h-[calc(100vh-4rem)] before:w-[300px] before:h-[300px] before:absolute before:top-32 before:-left-32 md:before:left-32 before:bg-accent/20 before:blur-3xl before:rounded-full ">
           <Outlet />
         </main>
         <ScrollRestoration />
