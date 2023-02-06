@@ -1,12 +1,12 @@
 export default function About() {
   return (
     <section className="flex flex-col justify-center w-auto mx-4 gap-y-4">
-      <div className="text-xl text-justify">
+      <div className="text-xl">
         <h1 className="text-3xl md:text-4xl leading-tight md:leading-tight text-gradient-theme">
           What can StartupMate do?
         </h1>
         <br />
-        <p>
+        <p className="text-justify">
           This awesome AI can help you generate some startup ideas with minimal
           eforth.
           <br />

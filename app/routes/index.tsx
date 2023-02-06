@@ -1,4 +1,4 @@
-import About from "~/components/About";
+import About from '~/components/About';
 import { Link } from '@remix-run/react';
 
 export default function Index() {
@@ -36,7 +36,9 @@ export default function Index() {
         </div>
       </div>
 
-      <Link to='create' className="btn btn-lg btn-block btn-accent mt-3" >GET STARTED!</Link>
+      <Link to="create" className="btn btn-lg btn-block btn-accent mt-3">
+        GET STARTED!
+      </Link>
     </article>
   );
 }
