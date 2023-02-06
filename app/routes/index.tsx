@@ -1,4 +1,5 @@
 import About from "~/components/About";
+import { Link } from '@remix-run/react';
 
 export default function Index() {
   return (
@@ -25,9 +26,9 @@ export default function Index() {
         AI! We promise StartupMate is much more creative than we are."
       </p>
 
-      <div className="collapse">
+      <div className="collapse collapse-arrow border border-base-300  bg-base-300 rounded-box ">
         <input type="checkbox" />
-        <div className="collapse-title text-xl font-medium">
+        <div className="collapse-title text-xl font-mediu">
           Read more about how it works
         </div>
         <div className="collapse-content">
@@ -35,7 +36,7 @@ export default function Index() {
         </div>
       </div>
 
-      <button className="btn btn-lg btn-block btn-accent mt-3">GET STARTED!</button>
+      <Link to='create' className="btn btn-lg btn-block btn-accent mt-3" >GET STARTED!</Link>
     </article>
   );
 }
