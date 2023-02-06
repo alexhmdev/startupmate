@@ -27,9 +27,9 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body id="scroll">
         <Navbar />
-        <main className="flex justify-center h-[calc(100vh-4rem)] before:w-[300px] before:h-[300px] before:absolute before:top-32 before:-left-32 md:before:left-32 before:bg-accent/20 before:blur-3xl before:rounded-full ">
+        <main className="flex justify-center mt-10 mb-10 before:w-[300px] before:h-[300px] before:absolute before:top-32 before:-left-32 md:before:left-32 before:bg-accent/20 before:blur-3xl before:rounded-full">
           <Outlet />
         </main>
         <ScrollRestoration />

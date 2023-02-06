@@ -1,8 +1,8 @@
 export default function About() {
   return (
-    <section className="flex flex-col justify-center w-[80ch] mx-4 gap-y-4">
+    <section className="flex flex-col justify-center w-auto mx-4 gap-y-4">
       <div className="text-xl text-justify">
-        <h1 className="text-4xl md:text-5xl leading-tight md:leading-tight text-gradient-theme">
+        <h1 className="text-3xl md:text-4xl leading-tight md:leading-tight text-gradient-theme">
           What can StartupMate do?
         </h1>
         <br />
@@ -18,7 +18,7 @@ export default function About() {
         </p>
       </div>
       <div className="text-xl text-justify">
-        <h1 className="text-4xl md:text-5xl text-gradient-theme">
+        <h1 className="text-3xl md:text-4xl text-gradient-theme">
           Main features
         </h1>
         <br />
