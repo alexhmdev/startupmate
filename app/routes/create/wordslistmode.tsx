@@ -1,11 +1,10 @@
 import type { FC } from 'react';
 import { useState } from 'react';
-import Clipboard from '~/components/Clipboard';
 import { Loader } from '~/components/loader';
 import ResponseCard from '~/components/ResponseCard';
 import useFetchAI from '~/hooks/useFetchAI';
 interface WordslistmodeProps {
-  sendRequest?: (words: string) => void;
+  sendRequest?: (topic: string) => void;
 }
 
 const Wordslistmode: FC<WordslistmodeProps> = () => {
@@ -20,7 +19,8 @@ const Wordslistmode: FC<WordslistmodeProps> = () => {
     event.preventDefault();
     fetchAI &&
       fetchAI(
-        `Generate a startup giving a list of words.\n-- \nWords: Ducks, Toys, Playable, funny, colorful\nStartup: A startup that makes rubber ducks of different colors, sizes and textures...\n--\nWords: Dog, cat, monkey, Keyboard, watch\nStartup: A veterinary online that recives customer inputs to analize the animal health and let them watch his process in livestream.\n--\nWords: Book, water, Credit card, shoes, car, bed, wall, airplane\nStatup: A library where you can pay with credit card, with drive trhu, and beds to rest, separate by walls and airplanes in the ceiling\n-- \nWord:${words}\nStartup: `
+        'command-xlarge-nightly',
+        `Generate a startup giving a list of words.\n-- \nWords: Ducks, Toys, Playable, funny, colorful\nStartup: A big store that sell rubber ducks of many different vibrant colors, inspiring and funny duck facts\n--\nWords: Dog, cat, monkey, Keyboard, watch\nStartup: A veterinary online that recives customer inputs to analize the animal health and let them watch his process in livestream.\n--\nWords: Book, water, Credit card, shoes, car, bed, wall, airplane\nStatup: A library where you can pay with credit card, with drive trhu, and beds to rest, separate by walls and airplanes in the ceiling\n-- \nWords:${words}\nStartup: `
       );
   };
 
@@ -28,7 +28,7 @@ const Wordslistmode: FC<WordslistmodeProps> = () => {
     <>
       <div className="form-control w-full">
         <label className="label">
-          <span className="label-text ">Write your words ideas</span>
+          <span className="label-text text-lg">Write a list of words</span>
         </label>
         <textarea
           onChange={handleOnChange}
@@ -37,12 +37,14 @@ const Wordslistmode: FC<WordslistmodeProps> = () => {
           name="words"
           required
         ></textarea>
-        {''}
       </div>
-      <button className="btn btn-accent mt-4" onClick={handleSubmit}>
+      <button
+        className="btn btn-accent mt-4"
+        onClick={handleSubmit}
+        disabled={isLoading}
+      >
         Generate
       </button>
-      <ResponseCard cardBody="A theme park with a central skates track that have colors that change -- A theme park with a central skates track that have colors that change -- A theme park with a central skates track that have colors that change -- A theme park with a central skates track that have colors that change --A theme park with a central skates track that have colors that change --A theme park with a central skates track that have colors that change --" />
       {isLoading ? (
         <Loader text="Creating your startup idea..." />
       ) : (

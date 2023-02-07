@@ -1,5 +1,7 @@
 import type { MouseEvent } from 'react';
 import { useState } from 'react';
+import Problemmode from './problemmode';
+import Topicmode from './topicmode';
 import Wordslistmode from './wordslistmode';
 
 export default function Create() {
@@ -43,7 +45,13 @@ export default function Create() {
       </div>
       <div className="card  bg-secondary max-w-3xl">
         <div className="card-body">
-          {tab === 'words' ? <Wordslistmode /> : <h1>Something else</h1>}
+          {tab === 'words' ? (
+            <Wordslistmode />
+          ) : tab === 'problem' ? (
+            <Problemmode />
+          ) : (
+            <Topicmode />
+          )}
         </div>
       </div>
     </section>

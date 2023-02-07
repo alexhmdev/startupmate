@@ -6,10 +6,13 @@ const useFetchAI = () => {
   const [response, setResponse] = useState();
   const [generation, setGeneration] = useState();
 
-  async function fetchAI(prompt: string) {
+  async function fetchAI(
+    model: 'command-xlarge-nightly' | 'xlarge' | 'medium',
+    prompt: string
+  ) {
     setIsLoading(true);
     const body = {
-      model: 'xlarge',
+      model,
       max_tokens: 300,
       temperature: 0.9,
       prompt,
