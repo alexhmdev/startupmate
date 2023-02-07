@@ -1,4 +1,4 @@
-import type { MetaFunction } from '@remix-run/node';
+import { json, MetaFunction } from '@remix-run/node';
 import {
   Links,
   LiveReload,
@@ -6,6 +6,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLoaderData,
 } from '@remix-run/react';
 import styles from './tailwind.css';
 import Navbar from './components/Navbar';
@@ -20,7 +21,16 @@ export function links() {
   return [...loaderLinks(), { rel: 'stylesheet', href: styles }];
 }
 
+export async function loader() {
+  return json({
+    ENV: {
+      COHERE_API_KEY: process.env.COHERE_API_KEY,
+    },
+  });
+}
+
 export default function App() {
+  const data = useLoaderData<typeof loader>();
   return (
     <html lang="en">
       <head>
@@ -32,6 +42,7 @@ export default function App() {
         <main className="flex justify-center mt-10 mb-10 before:w-[300px] before:h-[300px] before:absolute before:top-32 before:-left-32 md:before:left-32 before:bg-accent/20 before:blur-3xl before:rounded-full">
           <Outlet />
         </main>
+        <script dangerouslySetInnerHTML={{ __html: `window.ENV = ${JSON.stringify(data.ENV)}` }} />
         <ScrollRestoration />
         <Scripts />
         <LiveReload />

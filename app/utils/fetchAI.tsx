@@ -2,6 +2,7 @@ import type { AIResponse } from '~/models/AIResponse';
 const URL_COHERE = 'https://api.cohere.ai/generate';
 
 export default async function fetchAI(prompt: string): Promise<AIResponse> {
+  console.log('authorization', `Bearer ${process.env.COHERE_API_KEY}`);
   const body = {
     model: 'xlarge',
     max_tokens: 300,
@@ -19,8 +20,8 @@ export default async function fetchAI(prompt: string): Promise<AIResponse> {
     method: 'POST',
     headers: {
       'Cohere-Version': '2022-12-06',
-      accept: 'application/json',
-      authorization: `Bearer ${process.env.COHERE_API_KEY}`,
+      'accept': 'application/json',
+      'authorization': `Bearer ${process.env.COHERE_API_KEY}`,
       'content-type': 'application/json',
     },
     body: JSON.stringify(body),

@@ -1,21 +1,18 @@
 import type { ActionArgs } from '@remix-run/node';
 import { Form } from '@remix-run/react';
-import type { MouseEvent } from 'react';
+import { MouseEvent, useEffect } from 'react';
 import { useState } from 'react';
+import useFetchAI from '~/hooks/useFetchAI';
 import { AIResponse } from '~/models/AIResponse';
 import fetchAI from '~/utils/fetchAI';
 import Wordslistmode from './wordslistmode';
 
-export async function action({ request }: ActionArgs) {
-  let formData = await request.formData();
-  let values = Object.fromEntries(formData);
-  console.log(values);
-  const AIdata: AIResponse = await fetchAI(
-    'Generate a startup giving a list of words.\n-- \nWords: Ducks, Toys, Playable, funny, colorful\nStartup: A startup that makes rubber ducks of different colors, sizes and textures...\n--\nWords: Dog, cat, monkey, Keyboard, watch\nStartup: A veterinary online that recives customer inputs to analize the animal health and let them watch his process in livestream.\n--\nWords: Book, water, Credit card, shoes, car, bed, wall, airplane\nStatup: A library where you can pay with credit card, with drive trhu, and beds to rest, separate by walls and airplanes in the ceiling\n-- \nWord: Coffe, Internet, yoyo, ballons, icecream, supermarket, chill, geek, modern\nStartup: '
-  );
-  console.log(AIdata);
-  return AIdata;
-}
+// export async function action({ request }: ActionArgs) {
+//   let formData = await request.formData();
+//   let values = Object.fromEntries(formData);
+//   console.log(AIdata);
+//   return AIdata;
+// }
 
 export default function Create() {
   const [tab, setTab] = useState('words');
@@ -23,6 +20,21 @@ export default function Create() {
     let tabName = e.currentTarget.value;
     setTab(tabName);
   };
+  // const { generation, response, fetchAI } = useFetchAI();
+
+  // const sendRequest = async (words: string) => {
+  //   fetchAI && fetchAI(
+  //     `Words: Ducks, Toys, Playable, funny, colorful\nStartup: A startup that makes rubber ducks of different colors, sizes and textures...\n--\nWords: Dog, cat, monkey, Keyboard, watch\nStartup: A veterinary online that recives customer inputs to analize the animal health and let them watch his process in livestream.\n--\nWords: Book, water, Credit card, shoes, car, bed, wall, airplane\nStatup: A library where you can pay with credit card, with drive trhu, and beds to rest, separate by walls and airplanes in the ceiling\n-- \nWord: ${words}\nStartup: `
+  //   );
+  // }
+
+  // useEffect(() => {
+  //   console.log('generationCI', generation);
+  // }, [generation]);
+  // useEffect(() => {
+  //   console.log('responseCI', response);
+  // }, [response]);
+
   return (
     <section className="flex flex-col justify-center gap-y-4">
       <h1 className="text-3xl md:text-5xl leading-tight md:leading-tight text-gradient-theme">
