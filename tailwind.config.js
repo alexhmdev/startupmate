@@ -12,7 +12,6 @@ module.exports = {
           'base-100': '#2222',
         },
       },
-      'cupcake',
     ],
   },
   plugins: [require('daisyui')],
