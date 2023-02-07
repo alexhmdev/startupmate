@@ -52,6 +52,7 @@ const Wordslistmode: FC<WordslistmodeProps> = () => {
           {generation && (
             <>
               <h1 className="text-2xl">Your startup idea</h1>
+              <ResponseCard cardBody={generation} />
             </>
           )}
         </>
