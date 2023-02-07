@@ -29,7 +29,7 @@ const useFetchAI = () => {
       headers: {
         'Cohere-Version': '2022-12-06',
         accept: 'application/json',
-        authorization: `Bearer ${window.ENV.COHERE_API_KEY}`,
+        authorization: `Bearer O5u1iJnztnObFRAtVmajD3OziGxts6h0RlugsfyL`,
         'content-type': 'application/json',
       },
       body: JSON.stringify(body),
